@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Notifications API
+  description: REST API for user notifications
+  version: 1.0.0
+
+paths:
+  /api/notifications:
+    get:
+      summary: Get user notifications
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                notifications:
+                  - id: 1
+                    message: "You have a new follower."
+                    read: false
+                  - id: 2
+                    message: "Your submission was successful."
+                    read: true
+
+  /api/notifications/{notificationId}:
+    put:
+      summary: Mark a notification as read
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          description: ID of the notification
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Notification marked as read successfully
+          content:
+            application/json:
+              example:
+                message: "Notification marked as read successfully"

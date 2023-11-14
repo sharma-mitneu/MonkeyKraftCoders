@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: Coding Challenge API
+  description: REST API for coding challenges
+  version: 1.0.0
+
+paths:
+  /api/challenges:
+    get:
+      summary: List all available challenges
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                challenges:
+                  - id: 1
+                    title: "Challenge 1"
+                  - id: 2
+                    title: "Challenge 2"
+
+  /api/challenges/{challengeId}:
+    get:
+      summary: Get details of a specific challenge
+      parameters:
+        - name: challengeId
+          in: path
+          required: true
+          description: ID of the challenge
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                id: 1
+                title: "Challenge 1"
+                description: "Description of Challenge 1"
+
+  /api/challenges/{challengeId}/submit:
+    post:
+      summary: Submit a solution for a challenge
+      parameters:
+        - name: challengeId
+          in: path
+          required: true
+          description: ID of the challenge
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                solution:
+                  type: string
+              required:
+                - solution
+      responses:
+        '200':
+          description: Submission successful
+          content:
+            application/json:
+              example:
+                message: "Submission successful"

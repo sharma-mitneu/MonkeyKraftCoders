@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: Admin Operations API
+  description: REST API for admin operations
+  version: 1.0.0
+
+paths:
+  /api/admin/challenges:
+    post:
+      summary: Create a new coding challenge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+              required:
+                - title
+                - description
+      responses:
+        '201':
+          description: Challenge created successfully
+          content:
+            application/json:
+              example:
+                message: "Challenge created successfully"
+                challenge:
+                  id: 1
+                  title: "New Challenge"
+                  description: "Description of the new challenge"
+
+  /api/admin/challenges/{challengeId}:
+    delete:
+      summary: Delete a coding challenge
+      parameters:
+        - name: challengeId
+          in: path
+          required: true
+          description: ID of the challenge
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Challenge deleted successfully
+          content:
+            application/json:
+              example:
+                message: "Challenge deleted successfully"
+
+  /api/admin/users/{userId}/ban:
+    post:
+      summary: Ban a user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID of the user
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User banned successfully
+          content:
+            application/json:
+              example:
+                message: "User banned successfully"

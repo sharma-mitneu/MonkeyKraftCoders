@@ -1,5 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/OuSBNpwM)
 
+<<<<<<< HEAD
+=======
+
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/OuSBNpwM)
+
+>>>>>>> 5f41f9062efe7e847e885ecbbfd68168a3a83a24
 Coding website
 
 Introduction:
@@ -35,3 +41,4 @@ Email: codingwebsite@gmail.com
 Every coding challenge is an opportunity to grow, and every contribution you make to this repository helps create a valuable resource for developers.
 
 Object Model is attached below:
+![Object Model Image](./Object-Model-design.png)
