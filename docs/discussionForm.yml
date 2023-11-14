@@ -1,0 +1,91 @@
+openapi: 3.0.0
+info:
+  title: Discussion Forum API
+  description: REST API for challenge forums
+  version: 1.0.0
+
+paths:
+  /api/challenges/{challengeId}/forum:
+    get:
+      summary: List all posts in a challenge's forum
+      parameters:
+        - name: challengeId
+          in: path
+          required: true
+          description: ID of the challenge
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                posts:
+                  - id: 1
+                    author: user1
+                    content: "This is a forum post."
+                  - id: 2
+                    author: user2
+                    content: "Another forum post."
+
+    post:
+      summary: Create a new post in a challenge's forum
+      parameters:
+        - name: challengeId
+          in: path
+          required: true
+          description: ID of the challenge
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                author:
+                  type: string
+                content:
+                  type: string
+              required:
+                - author
+                - content
+      responses:
+        '201':
+          description: Post created successfully
+          content:
+            application/json:
+              example:
+                message: "Post created successfully"
+                post:
+                  id: 3
+                  author: user3
+                  content: "New forum post."
+
+  /api/challenges/{challengeId}/forum/{postId}:
+    get:
+      summary: Get details of a specific post
+      parameters:
+        - name: challengeId
+          in: path
+          required: true
+          description: ID of the challenge
+          schema:
+            type: integer
+        - name: postId
+          in: path
+          required: true
+          description: ID of the post
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                id: 1
+                author: user1
+                content: "This is a forum post."
