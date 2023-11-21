@@ -4,16 +4,13 @@ const Schema = mongoose.Schema;
 
 const leaderboardSchema = new Schema({
     rank: {
-        type: Number,
-        required: true
+        type: Number
     },
     username: {
-        type: String,
-        required: true
+        type: String
     },
     score: {
-    score: Number,
-    required: true
+        score: Number
     }
   }
 );

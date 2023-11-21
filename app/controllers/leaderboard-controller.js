@@ -1,6 +1,6 @@
 // leaderboardController.js
 
-import * as leaderboardService from '../services/leaderboardService.js';
+import * as leaderboardService from '../services/leaderboard-service.js';
 import { setResponse, setErrorResponse } from './response-handler.js';
 
 export const getLeaderboard = async (request, response) => {
