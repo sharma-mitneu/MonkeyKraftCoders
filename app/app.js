@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
-
+import registerRouter from './routes/index.js'
 
 const initialize = (app) => {
 

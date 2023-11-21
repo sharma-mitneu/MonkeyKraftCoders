@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1"
   },
   "scripts": {
     "start": "node server.js"
@@ -12,7 +15,6 @@
   "directories": {
     "doc": "docs"
   },
-  "devDependencies": {},
   "author": "",
   "license": "ISC",
   "type": "module"
