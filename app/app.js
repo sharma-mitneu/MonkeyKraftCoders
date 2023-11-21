@@ -12,6 +12,10 @@ const initialize = (app) => {
     
     //TODO: MongoDB connection
 
+    mongoose.connect('mongodb+srv://sharmamit:fvIbPVY6jNxcFpfz@cluster1.egdukyt.mongodb.net/leaderBoard?retryWrites=true&w=majority');
+    registerRouter(app);
+
+    //
     //TODO: Initialize routes
     
     registerRouter(app);
