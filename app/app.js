@@ -9,12 +9,12 @@ const initialize = (app) => {
     app.use(express.json());
     app.use(express.urlencoded());
     mongoose.connect
+    
     //TODO: MongoDB connection
-    //mongoose.connect('mongodb+srv://sharmamit:o8A6bx573AMxIYXg@mdbtestuser01.ituwg.mongodb.net/courseDB?retryWrites=true&w=majority');
-    registerRouter(app);
 
     //TODO: Initialize routes
-
+    
+    registerRouter(app);
 }
 
 export default initialize;
