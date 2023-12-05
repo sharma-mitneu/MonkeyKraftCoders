@@ -10,7 +10,7 @@ const leaderboardSchema = new Schema({
         type: String
     },
     score: {
-        score: Number
+        type: Number
     }
   }
 );
