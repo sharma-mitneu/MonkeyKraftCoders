@@ -1,12 +1,16 @@
 // ProblemDetails.tsx
 import React from 'react';
 
-const ProblemDetails: React.FC = () => {
+interface ProblemDetailsProps {
+  selectedUser: string | null;
+}
+
+const problemlist: React.FC<ProblemDetailsProps> = ({ selectedUser }) => {
   return (
     <div className="new-container">
-      {/* ... Your problem details JSX here ... */}
+      {selectedUser && <p>Unique dummy problem statement for {selectedUser} goes here.</p>}
     </div>
   );
 };
 
-export default ProblemDetails;
+export default problemlist;
