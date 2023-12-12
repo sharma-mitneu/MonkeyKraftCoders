@@ -60,3 +60,6 @@ To set up the MonkeyKraft Coders locally, follow these steps:
 
 Every coding challenge is an opportunity to grow, and every contribution you make to this repository helps create a valuable resource for developers.
 
+Object Model is attached below:
+
+![Object Model Design](./objectmodeldesign-webd.png)
