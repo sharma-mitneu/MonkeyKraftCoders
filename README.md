@@ -1,38 +1,46 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/OuSBNpwM)
+# Getting Started with Create React App
 
-Coding website
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Introduction:
-This is a comprehensive platform that provides a wide range of coding challenges and interview questions to help you enhance your coding skills and prepare for technical interviews.
+## Available Scripts
 
-Table of Contents:
-Features
-Contributing
-community
-Contact
+In the project directory, you can run:
 
--Features
-Large Problem Set: Coding website provides a large problem set encompassing many different subjects, such as shell scripting, databases, algorithms, and more.
-Real Interview Questions: Real technical interview questions from leading technology organizations serve as the basis for a large number of the challenges on Coding website.
-Discussion Board: Every issue has a dedicated discussion board where people may exchange solutions, talk about various strategies, and get advice from one another.
-Contests: Take part in the weekly Coding Website contests to test your skills and pit yourself against other users.
+### `npm start`
 
--Contributing
-File Structure: Make sure your code is legibly and easily understandable. Make a folder specifically for each issue and name them according to a system that facilitates problem identification.
-Language Support: To increase the diversity and accessibility of this repository, please feel free to submit solutions written in a variety of programming languages.
-Documentation: To make your thinking process easier for others to grasp, add notes and explanations to your code.
-Testing: To verify your solutions, provide test cases whenever possible.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
--Community
-Connect with the Coding Website community:
-Coding Website Discuss
-Coding Website Blog
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
--Contact
-If you have any questions, concerns, or feedback, feel free to reach out:
-Email: codingwebsite@gmail.com
+### `npm test`
 
-Every coding challenge is an opportunity to grow, and every contribution you make to this repository helps create a valuable resource for developers.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Object Model is attached below:
-![Object Model Image](./Object-Model-design.png)
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
