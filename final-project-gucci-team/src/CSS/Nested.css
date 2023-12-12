@@ -1,0 +1,25 @@
+/* NestedList.css */
+.nested-list-container {
+    display: none;
+    position: static;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nested-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  
+  .problem {
+    list-style-type: none;
+    margin-bottom: 5px;
+    background-color: #81C784;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
