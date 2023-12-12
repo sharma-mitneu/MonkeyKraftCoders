@@ -15,8 +15,8 @@ const Leaderboard: React.FC = () => {
 
       rows.forEach((row: any) => {
         const problemsSolved = parseInt(row.cells[2].innerText, 10);
-        const score = calculateScore(problemsSolved);
-        row.cells[3].innerText = score;
+        // const score = calculateScore(problemsSolved);
+        // row.cells[3].innerText = score;
       });
     };
 
@@ -32,8 +32,21 @@ const Leaderboard: React.FC = () => {
     // Close the nested list when clicking outside of it
     document.addEventListener('click', (event) => {
       const nestedListContainer = document.getElementById('nestedListContainer');
-      if (!nestedListContainer!.contains(event.target) && !rows.contains(event.target)) {
-        nestedListContainer!.style.display = 'none';
+    
+      if (nestedListContainer) {
+        let found = false;
+    
+        // Check if the event target is inside any row
+        rows.forEach((row: any) => {
+          if (row.contains(event.target as Node)) {
+            found = true;
+          }
+        });
+    
+        // If the target is not inside the container or any row, hide the container
+        if (!nestedListContainer.contains(event.target as Node) && !found) {
+          nestedListContainer.style.display = 'none';
+        }
       }
     });
 

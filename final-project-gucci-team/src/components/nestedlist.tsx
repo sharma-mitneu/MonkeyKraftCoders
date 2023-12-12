@@ -16,28 +16,36 @@ const NestedList: React.FC<NestedListProps> = ({ selectedUser }) => {
 
       rows.forEach((row: any) => {
         const problemsSolved = parseInt(row.cells[2].innerText, 10);
-        const score = calculateScore(problemsSolved);
-        row.cells[3].innerText = score;
+        //const score = calculateScore(problemsSolved);
+        //row.cells[3].innerText = score;
       });
     };
 
     const createNestedList = (username: string) => {
       const dummyProblems = ['Problem 1', 'Problem 2', 'Problem 3', 'Problem 4', 'Problem 5'];
       const nestedListContainer = document.getElementById('nestedList');
-
-      nestedListContainer.innerHTML = dummyProblems.map((problem, index) => `<div class="problem" data-problem-index="${index}">${problem}</div>`).join('');
-      document.getElementById('nestedListContainer')!.style.display = 'block';
-
-      // Attach click event listener to each problem div
-      const problemDivs = document.querySelectorAll('.problem');
-      problemDivs.forEach((problemDiv: any) => {
-        problemDiv.addEventListener('click', () => {
-          const newContainer = document.getElementById('newContainer');
-          const problemIndex = problemDiv.dataset.problemIndex;
-          newContainer!.innerHTML = `<p>Unique dummy problem statement for Problem ${parseInt(problemIndex) + 1} goes here.</p>`;
-          newContainer!.style.display = 'block';
+    
+      if (nestedListContainer) {
+        nestedListContainer.innerHTML = dummyProblems.map((problem, index) => `<div class="problem" data-problem-index="${index}">${problem}</div>`).join('');
+        const containerElement = document.getElementById('nestedListContainer');
+        
+        if (containerElement) {
+          containerElement.style.display = 'block';
+        }
+    
+        // Attach click event listener to each problem div
+        const problemDivs = document.querySelectorAll('.problem');
+        problemDivs.forEach((problemDiv: any) => {
+          problemDiv.addEventListener('click', () => {
+            const newContainer = document.getElementById('newContainer');
+            const problemIndex = problemDiv.dataset.problemIndex;
+            if (newContainer) {
+              newContainer.innerHTML = `<p>Unique dummy problem statement for Problem ${parseInt(problemIndex) + 1} goes here.</p>`;
+              newContainer.style.display = 'block';
+            }
+          });
         });
-      });
+      }
     };
 
     // Attach a click event listener to each row to show scores and problems solved

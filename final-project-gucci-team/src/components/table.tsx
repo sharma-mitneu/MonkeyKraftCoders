@@ -53,7 +53,6 @@ const Table: React.FC<TableProps> = ({ onRowClick, selectedUser }) => {
               <td>{user.rank}</td>
               <td>{user.username}</td>
               <td>{user.problemsSolved}</td>
-              {/* <td>{user.score}</td> */}
             </tr>
           ))}
         </tbody>
