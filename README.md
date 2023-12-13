@@ -55,7 +55,7 @@ To set up the MonkeyKraft Coders locally, follow these steps:
 2. Navigate to the project directory
 3. Install dependencies: npm install
 4. Set up the database
-5. Start the development server: npm start
+5. Start the development server on client first and then on server  : npm start
 6. Open your browser and navigate to http://localhost:3000 to access the MonkeyKraft Coders Website.
 
 Every coding challenge is an opportunity to grow, and every contribution you make to this repository helps create a valuable resource for developers.
