@@ -1,5 +1,8 @@
 # MonkeyKraft Coders
 
+<img width="1463" alt="image" src="https://github.com/info-6150-fall-2023/final-project-gucci-team/assets/145163557/4168c712-ea76-496f-90a0-00a15e19e6b5">
+
+
 ## Overview
 
 Introduction:
