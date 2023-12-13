@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../App";
-import Loading from "../components/Loading";
+import Loading from "../Components/Loading";
 
 const SignupPage = ({
     Data,

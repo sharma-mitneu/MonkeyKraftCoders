@@ -1,10 +1,10 @@
-import MainHeading from "../components/MainHeading";
+import MainHeading from "../Components/MainHeading";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
 import { API_URL } from "../App";
-import Loading from "../components/Loading";
+import Loading from "../Components/Loading";
 
 const LandingPage = ({
     token,

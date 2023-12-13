@@ -4,14 +4,14 @@ import ReactCodeMirror from "@uiw/react-codemirror";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
 import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
 import axios, { AxiosError, AxiosResponse } from "axios";
-import ProblemNavbar from "../components/ProblemNavbar";
-import ProblemDescription from "../components/ProblemDescription";
+import ProblemNavbar from "../Components/ProblemNavbar";
+import ProblemDescription from "../Components/ProblemDescription";
 import { useNavigate, useParams } from "react-router-dom";
-import Editorial from "../components/Editorial";
-import MainHeading from "../components/MainHeading";
-import Submissions from "../components/Submissions";
+import Editorial from "../Components/Editorial";
+import MainHeading from "../Components/MainHeading";
+import Submissions from "../Components/Submissions";
 import { API_URL } from "../App";
-import Loading from "../components/Loading";
+import Loading from "../Components/Loading";
 
 const ProblemPage = ({
     data,

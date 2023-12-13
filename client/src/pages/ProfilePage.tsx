@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MainHeading from "../components/MainHeading";
+import MainHeading from "../Components/MainHeading";
 import { API_URL } from "../App";
 //'../path/to/your/local/image.jpg'; // Adjust the path accordingly
 

@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import router from "./routes/index";
 import mongoose from "mongoose";
-import { customCors } from "./middlewares/cors";
+import { customCors } from "./utilities/cors";
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
 console.log(MONGODB_URI);

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import ProblemPage from "./pages/ProblemPage";
+import ProblemPage from "./Pages/ProblemPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ProblemSet from "./pages/ProblemSet";
-import LandingPage from "./pages/LandingPage";
-import SignupPage from "./pages/SignupPage";
-import LoginPage from "./pages/LoginPage";
-import ErrorPage from "./pages/ErrorPage";
-import ProfilePage from "./pages/ProfilePage";
-import SettingPage from "./pages/SettingPage";
+import ProblemSet from "./Pages/ProblemSet";
+import LandingPage from "./Pages/LandingPage";
+import SignupPage from "./Pages/SignupPage";
+import LoginPage from "./Pages/LoginPage";
+import ErrorPage from "./Pages/ErrorPage";
+import ProfilePage from "./Pages/ProfilePage";
+import SettingPage from "./Pages/SettingPage";
 
 export const TOKEN_STORAGE_KEY = "authToken";
 export const ID_STORAGE_KEY = "id";

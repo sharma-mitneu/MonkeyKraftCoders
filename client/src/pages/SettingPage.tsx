@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import MainHeading from "../components/MainHeading";
+import MainHeading from "../Components/MainHeading";
 import { useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
-import ConfirmModal from "../components/ConfirmModal";
+import ConfirmModal from "../Components/ConfirmModal";
 import { deleteTokenAndId } from "../ts/utils/utils";
 import { TOKEN_STORAGE_KEY, ID_STORAGE_KEY, API_URL } from "../App";
 

@@ -3,11 +3,11 @@ import bcrypt from "bcrypt";
 import UserModel from "../models/user";
 import { existsEmail, existsUsername } from "../utils/utils";
 import jwt from "jsonwebtoken";
-import { authenticateToken } from "../middlewares/token";
+import { authenticateToken } from "../utilities/token";
 require("dotenv");
 import Filter from "bad-words";
 import ProblemModel from "../models/problem";
-import { customCors } from "../middlewares/cors";
+import { customCors } from "../utilities/cors";
 
 const accounts = express.Router();
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import CustomNavbar from "../components/CustomNavbar";
-import ProblemList from "../components/ProblemList";
-import MainHeading from "../components/MainHeading";
+import CustomNavbar from "../Components/CustomNavbar";
+import ProblemList from "../Components/ProblemList";
+import MainHeading from "../Components/MainHeading";
 import { useEffect } from "react";
 import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
