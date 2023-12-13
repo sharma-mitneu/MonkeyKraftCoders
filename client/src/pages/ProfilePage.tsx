@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MainHeading from "../components/MainHeading";
 import { API_URL } from "../App";
+//'../path/to/your/local/image.jpg'; // Adjust the path accordingly
+
 
 const ProfilePage = ({
     token,
