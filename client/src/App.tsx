@@ -142,7 +142,7 @@ function App() {
                         element={<SettingPage token={token} id={id} />}
                     />
                     <Route
-                        path="/accounts/:name"
+                        path="/accountsRouter/:name"
                         element={<ProfilePage token={token} id={id} />}
                     />
 

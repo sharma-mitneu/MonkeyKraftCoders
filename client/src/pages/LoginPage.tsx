@@ -24,7 +24,7 @@ const LoginPage = ({
         setisLoading(true);
         try {
             axios
-                .post(`${API_URL}/api/accounts/login`, {
+                .post(`${API_URL}/api/accountsRouter/login`, {
                     username_or_email: usernameOrEmail,
                     password: password,
                 })

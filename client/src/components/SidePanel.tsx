@@ -70,7 +70,7 @@ const SidePanel = ({
                 <hr className="border-borders w-[88%] mx-auto" />
                 <SidePanelItem
                     text="Your profile"
-                    to={`/accounts/${data.username}`}
+                    to={`/accountsRouter/${data.username}`}
                 />
                 <SidePanelItem text="Problem list" to={`/problemset`} />
                 <SidePanelItem text="Settings" to={`/settings`} />

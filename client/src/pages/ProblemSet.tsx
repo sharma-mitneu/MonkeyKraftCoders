@@ -52,7 +52,7 @@ const ProblemSet = ({
 
     useEffect(() => {
         axios
-            .get(`${API_URL}/api/accounts/id/${id}`, {
+            .get(`${API_URL}/api/accountsRouter/id/${id}`, {
                 headers: {
                     Authorization: token,
                 },

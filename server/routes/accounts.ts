@@ -4,18 +4,13 @@ import UserModel from "../models/user";
 import { existsEmail, existsUsername } from "../utils/utils";
 import jwt from "jsonwebtoken";
 import { authenticateToken } from "../utilities/token";
-require("dotenv");
 import Filter from "bad-words";
 import ProblemModel from "../models/problem";
 import { customCors } from "../utilities/cors";
 
-const accounts = express.Router();
+const accountsRouter = express.Router();
 
-accounts.post<
-    {},
-    { id?: string; token?: string; success: boolean; message: string },
-    User
->("/signup", async (req, res) => {
+accountsRouter.post<{}, { id?: string; token?: string; success: boolean; message: string }, User>("/signup", async (req, res) => {
     try {
         const { username, email, password } = req.body;
 
@@ -38,19 +33,11 @@ accounts.post<
             });
             return;
         }
-        // if (!passwordRegex.test(password)) {
-        //     res.status(400).json({
-        //         success: false,
-        //         message:
-        //             "Password is not valid. Password must contain at least one letter (uppercase or lowercase) and one digit, and must be at least 8 characters in length.",
-        //     });
-        //     return;
-        // }
+
         if (!usernameRegex.test(username)) {
             res.status(400).json({
                 success: false,
-                message:
-                    "Username must be between 3 to 15 characters and can only contain letters, numbers, hyphens, and underscores.",
+                message: "Username must be between 3 to 15 characters and can only contain letters, numbers, hyphens, and underscores.",
             });
             return;
         }
@@ -79,12 +66,12 @@ accounts.post<
             return;
         }
 
-        const hashedPas = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = {
             username: username,
             email: email,
-            password: hashedPas,
+            password: hashedPassword,
         };
 
         const userModel = new UserModel(user);
@@ -93,7 +80,7 @@ accounts.post<
         const userFromDb = await UserModel.findOne({
             username: username,
             email: email,
-            password: hashedPas,
+            password: hashedPassword,
         });
 
         const id = userFromDb ? userFromDb.id.toString() : "none";
@@ -107,7 +94,7 @@ accounts.post<
             success: true,
             message: "Account created successfully",
         });
-    } catch (e) {
+    } catch (error) {
         res.status(500).json({
             success: false,
             message: "Error creating account",
@@ -115,11 +102,7 @@ accounts.post<
     }
 });
 
-accounts.post<
-    {},
-    { id?: string; token?: string; success: boolean; message: string },
-    { username_or_email: string; password: string }
->("/login", async (req, res) => {
+accountsRouter.post<{}, { id?: string; token?: string; success: boolean; message: string }, { username_or_email: string; password: string }>("/login", async (req, res) => {
     const { username_or_email, password } = req.body;
 
     if (!username_or_email || !password) {
@@ -138,10 +121,10 @@ accounts.post<
             ],
         });
 
-        if (user == null) {
+        if (!user) {
             res.status(400).json({
                 success: false,
-                message: "Username or Email doesn't exists",
+                message: "Username or Email doesn't exist",
             });
             return;
         }
@@ -168,13 +151,13 @@ accounts.post<
             );
             res.json({ success: false, message: "Password incorrect" });
         }
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         res.status(500).json({ success: false, message: "Error" });
     }
 });
 
-accounts.post("/delete/:id", authenticateToken, async (req, res) => {
+accountsRouter.post("/delete/:id", authenticateToken, async (req, res) => {
     try {
         const { id } = req.params;
         await UserModel.findByIdAndDelete(id);
@@ -182,12 +165,12 @@ accounts.post("/delete/:id", authenticateToken, async (req, res) => {
             success: true,
             message: "Account deleted successfully",
         });
-    } catch (e) {
-        res.json({ success: false, message: e });
+    } catch (error) {
+        res.json({ success: false, message: error });
     }
 });
 
-accounts.get("/id/:id", authenticateToken, async (req, res) => {
+accountsRouter.get("/id/:id", authenticateToken, async (req, res) => {
     const id = req.params.id;
 
     const user = await UserModel.findById(id);
@@ -200,7 +183,7 @@ accounts.get("/id/:id", authenticateToken, async (req, res) => {
     res.json(user);
 });
 
-accounts.get("/:name", async (req, res) => {
+accountsRouter.get("/:name", async (req, res) => {
     const name = req.params.name;
 
     const user = await UserModel.findOne({
@@ -223,19 +206,22 @@ accounts.get("/:name", async (req, res) => {
     let hardSolved = 0;
 
     for (let i = 0; i < allProblems.length; i++) {
-        if (allProblems[i].main.difficulty === "easy") {
+        const problem = allProblems[i].main;
+        const difficulty = problem.difficulty;
+
+        if (difficulty === "easy") {
             easyProblems++;
-            if (user.problems_solved.includes(allProblems[i].main.name)) {
+            if (user.problems_solved.includes(problem.name)) {
                 easySolved++;
             }
-        } else if (allProblems[i].main.difficulty === "medium") {
+        } else if (difficulty === "medium") {
             mediumProblems++;
-            if (user.problems_solved.includes(allProblems[i].main.name)) {
+            if (user.problems_solved.includes(problem.name)) {
                 mediumSolved++;
             }
         } else {
             hardProblems++;
-            if (user.problems_solved.includes(allProblems[i].main.name)) {
+            if (user.problems_solved.includes(problem.name)) {
                 hardSolved++;
             }
         }
@@ -264,6 +250,4 @@ accounts.get("/:name", async (req, res) => {
     res.json(publicUser);
 });
 
-
-
-export default accounts;
+export default accountsRouter;

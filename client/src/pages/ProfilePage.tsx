@@ -29,7 +29,7 @@ const ProfilePage = ({
 
     useEffect(() => {
         axios
-            .get(`${API_URL}/api/accounts/id/${id}`, {
+            .get(`${API_URL}/api/accountsRouter/id/${id}`, {
                 headers: {
                     Authorization: token,
                 },
@@ -45,7 +45,7 @@ const ProfilePage = ({
                 setVerifiedCertain(true);
             });
         axios
-            .get<{}, { data: PublicUser }>(`${API_URL}/api/accounts/${name}`)
+            .get<{}, { data: PublicUser }>(`${API_URL}/api/accountsRouter/${name}`)
             .then(({ data }) => {
                 setUsername(data.username);
                 setUser(data);

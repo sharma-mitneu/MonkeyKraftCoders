@@ -32,7 +32,7 @@ const SignupPage = ({
                 return;
             }
             axios
-                .post(`${API_URL}/api/accounts/signup`, {
+                .post(`${API_URL}/api/accountsRouter/signup`, {
                     username: username,
                     email: email,
                     password: password,
